@@ -42,7 +42,14 @@ class UsersController extends Controller
 
         $users->name = $request->name;
         $users->email = $request->email;
-        $users->password = ($request->password);
+        if (strlen($request->password) > 7)
+        {
+            $user->password = bcrypy($request->password)
+        }else
+        {
+            return response()->json(['Error' => 'la password debe tener 8 caracteres como poco', 400])
+        }
+        
         $users->rol_id = 2;
 
         $users->save();

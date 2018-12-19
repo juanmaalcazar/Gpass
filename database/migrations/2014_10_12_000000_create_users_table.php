@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
+
+            //$table->string('email')->unique()->index;
             $table->string('password');
             $table->integer('rol_id');
                         

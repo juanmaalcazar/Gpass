@@ -26,7 +26,10 @@ public function login()
                     
                     'email' => $_POST['email'],
                     'password' => $_POST['password'],
-                    
+                    'name' => $user->name,
+                    'id' => $user->id,
+
+
                     'random' => time()
                 ];
                 $token = JWT::encode($tokenParams, $key);
