@@ -30,7 +30,6 @@ public function login()
                     'id' => $user->id,
 
 
-                    'random' => time()
                 ];
                 $token = JWT::encode($tokenParams, $key);
             
